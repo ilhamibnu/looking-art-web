@@ -112,6 +112,6 @@ class AuthController extends Controller
         if ($request->password) {
             $user->password = bcrypt($request->password);
         }
-        return redirect('/user/profil')->with('update', 'Profil berhasil diupdate');
+        return redirect('/user/profil')->with('updateprofil', 'Profil berhasil diupdate');
     }
 }

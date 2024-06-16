@@ -39,5 +39,72 @@
     <script src="{{ asset('admin/assets/js/scripts.js?ver=3.2.3') }}"></script>
     <script src="{{ asset('admin/assets/js/demo-settings.js?ver=3.2.3') }}"></script>
     <script src="{{ asset('admin/assets/js/charts/chart-lms.js?ver=3.2.3') }}"></script>
+    <script src="{{ asset('admin/assets/js/libs/datatable-btns.js?ver=3.2.3') }}"></script>
+
+    @if (Session::get('login'))
+    <script>
+        Swal.fire({
+            icon: 'success'
+            , title: 'Success'
+            , text: 'Login successfully'
+            , showConfirmButton: false
+            , timer: 1500
+        });
+
+    </script>
+    @endif
+
+    @if (Session::get('updateprofil'))
+    <script>
+        Swal.fire({
+            icon: 'success'
+            , title: 'Success'
+            , text: 'Profile has been updated successfully'
+            , showConfirmButton: false
+            , timer: 1500
+        });
+
+    </script>
+    @endif
+
+    @if (Session::get('store'))
+    <script>
+        Swal.fire({
+            icon: 'success'
+            , title: 'Success'
+            , text: 'Data has been saved successfully'
+            , showConfirmButton: false
+            , timer: 1500
+        });
+
+    </script>
+    @endif
+
+    @if (Session::get('update'))
+    <script>
+        Swal.fire({
+            icon: 'success'
+            , title: 'Success'
+            , text: 'Data has been updated successfully'
+            , showConfirmButton: false
+            , timer: 1500
+        });
+
+    </script>
+    @endif
+
+    @if (Session::get('destroy'))
+    <script>
+        Swal.fire({
+            icon: 'success'
+            , title: 'Success'
+            , text: 'Data has been deleted successfully'
+            , showConfirmButton: false
+            , timer: 1500
+        });
+
+    </script>
+    @endif
+
 </body>
 </html>

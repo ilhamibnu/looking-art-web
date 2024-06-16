@@ -22,7 +22,7 @@ class ArtController extends Controller
             'jenis_kelamin' => 'required',
             'tgl_lahir' => 'required',
             'alamat' => 'required',
-            'foto' => 'required',
+            'foto' => 'required|image|mimes:jpeg,png,jpg',
             'status' => 'required'
         ], [
             'name.required' => 'Nama harus diisi',
@@ -30,6 +30,8 @@ class ArtController extends Controller
             'tgl_lahir.required' => 'Tanggal lahir harus diisi',
             'alamat.required' => 'Alamat harus diisi',
             'foto.required' => 'Foto harus diisi',
+            'foto.image' => 'Foto harus berupa gambar',
+            'foto.mimes' => 'Foto harus berformat jpeg, png, jpg',
             'status.required' => 'Status harus diisi'
 
         ]);

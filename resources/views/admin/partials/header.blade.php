@@ -41,7 +41,7 @@
                                             <div class="chat-media user-avatar bg-pink"><span>AB</span><span class="status dot dot-lg dot-success"></span></div>
                                             <div class="chat-info">
                                                 <div class="chat-from">
-                                                    <div class="name">Abu Bin Ishtiyak</div><span class="time">4:49 AM</span>
+                                                    <div class="name">{{ Auth::user()->name }}</div><span class="time">4:49 AM</span>
                                                 </div>
                                                 <div class="chat-context">
                                                     <div class="text">Hi, I am Ishtiyak, can you help me with this problem ?</div>
@@ -162,7 +162,7 @@
                                 <div class="user-avatar sm"><em class="icon ni ni-user-alt"></em></div>
                                 <div class="user-info d-none d-xl-block">
                                     <div class="user-status user-status-unverified">Unverified</div>
-                                    <div class="user-name dropdown-indicator">Abu Bin Ishityak</div>
+                                    <div class="user-name dropdown-indicator">{{ Auth::user()->name }}</div>
                                 </div>
                             </div>
                         </a>
@@ -182,7 +182,7 @@
                             </div>
                             <div class="dropdown-inner">
                                 <ul class="link-list">
-                                    <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                                    <li><a href="/admin/logout"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
                                 </ul>
                             </div>
                         </div>

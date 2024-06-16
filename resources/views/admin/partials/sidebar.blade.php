@@ -7,18 +7,19 @@
         <div class="nk-sidebar-content">
             <div class="nk-sidebar-menu" data-simplebar="">
                 <ul class="nk-menu">
-                    <li class="nk-menu-heading">
+                    {{-- <li class="nk-menu-heading">
                         <h6 class="overline-title text-primary-alt">Use-Case Preview</h6>
                     </li>
                     <li class="nk-menu-item"><a href="ecommerce/index.html" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-bag"></em></span><span class="nk-menu-text">E-Commerce Panel</span><span class="nk-menu-badge">HOT</span></a></li>
-                    <li class="nk-menu-item"><a href="lms/index.html" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-book-read"></em></span><span class="nk-menu-text">LMS Panel</span><span class="nk-menu-badge">HOT</span></a></li>
+                    <li class="nk-menu-item"><a href="lms/index.html" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-book-read"></em></span><span class="nk-menu-text">LMS Panel</span><span class="nk-menu-badge">HOT</span></a></li> --}}
                     <li class="nk-menu-heading">
                         <h6 class="overline-title text-primary-alt">Dashboards</h6>
                     </li>
-                    <li class="nk-menu-item"><a href="index.html" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-cart-fill"></em></span><span class="nk-menu-text">Default</span></a></li>
-                    <li class="nk-menu-item"><a href="index-sales.html" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span><span class="nk-menu-text">Sales</span></a></li>
-                    <li class="nk-menu-item"><a href="index-analytics.html" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-growth-fill"></em></span><span class="nk-menu-text">Analytics</span></a></li>
-                    <li class="nk-menu-heading">
+                    <li class="nk-menu-item"><a href="/admin/dashboard" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-cart-fill"></em></span><span class="nk-menu-text">Dashboard</span></a></li>
+                    <li class="nk-menu-item"><a href="/admin/penyewaan" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span><span class="nk-menu-text">Penyewaan</span></a></li>
+                    <li class="nk-menu-item"><a href="/admin/art" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-growth-fill"></em></span><span class="nk-menu-text">Art</span></a></li>
+                    <li class="nk-menu-item"><a href="/admin/user" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-users-fill"></em></span><span class="nk-menu-text">User</span></a></li>
+                    {{-- <li class="nk-menu-heading">
                         <h6 class="overline-title text-primary-alt">Applications</h6>
                     </li>
                     <li class="nk-menu-item has-sub"><a href="#" class="nk-menu-link nk-menu-toggle"><span class="nk-menu-icon"><em class="icon ni ni-tile-thumb-fill"></em></span><span class="nk-menu-text">Projects</span></a>
@@ -229,7 +230,7 @@
                             <li class="nk-menu-item"><a href="components/misc/map.html" class="nk-menu-link"><span class="nk-menu-text">Google Map</span></a></li>
                         </ul>
                     </li>
-                    <li class="nk-menu-item"><a href="email-templates.html" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-tag-alt-fill"></em></span><span class="nk-menu-text">Email Template</span></a></li>
+                    <li class="nk-menu-item"><a href="email-templates.html" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-tag-alt-fill"></em></span><span class="nk-menu-text">Email Template</span></a></li> --}}
                 </ul>
             </div>
         </div>

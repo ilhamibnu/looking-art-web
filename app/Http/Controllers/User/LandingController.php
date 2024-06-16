@@ -47,7 +47,7 @@ class LandingController extends Controller
         $penyewaan = new Penyewaan;
         $penyewaan->id_art = $id_art;
         $penyewaan->id_user = $id_user;
-        $penyewaan->tanggal = $request->tanggal;
+        $penyewaan->tanggal = date('Y-m-d');
         $penyewaan->status = 'Proses';
         $penyewaan->keterangan = 'Menunggu konfirmasi dari admin';
         $penyewaan->save();
