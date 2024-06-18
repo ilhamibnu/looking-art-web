@@ -49,6 +49,8 @@ Route::group(['middleware' => ['IsAdmin']], function () {
 
     # Penyewaan
     Route::get('/admin/penyewaan', [PenyewaanController::class, 'index']);
+    Route::delete('/admin/penyewaan/delete/{id}', [PenyewaanController::class, 'destroy']);
+    Route::put('/admin/penyewaan/sewastatus/{id}', [PenyewaanController::class, 'sewastatus']);
 });
 
 

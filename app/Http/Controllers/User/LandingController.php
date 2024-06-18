@@ -12,7 +12,7 @@ class LandingController extends Controller
 {
     public function index()
     {
-        $art = Art::all();
+        $art = Art::orderBy('id', 'DESC')->get();
         return view('user.pages.index', [
             'art' => $art
         ]);
@@ -41,6 +41,13 @@ class LandingController extends Controller
             return redirect()->back()->with('sewa-berhasil', 'Anda sedang menyewa art ini');
         }
 
+        $cek_status_art = Art::where('id', $request->id_art)->where('status', 'Tidak Tersedia')->first();
+
+        if ($cek_status_art) {
+            return redirect()->back()->with('status-art', 'Art tidak tersedia');
+        }
+
+
         $id_art = $request->id_art;
         $id_user = Auth::user()->id;
 
@@ -59,6 +66,7 @@ class LandingController extends Controller
     {
         $penyewaan = Penyewaan::find($id);
         $penyewaan->status = 'Tidak Jadi';
+        $penyewaan->keterangan = 'Penyewaan dibatalkan';
         $penyewaan->save();
 
         return redirect()->back()->with('tidak-jadi-sewa', 'Data berhasil dihapus');
@@ -66,7 +74,7 @@ class LandingController extends Controller
 
     public function penyewaan()
     {
-        $penyewaan = Penyewaan::with('art')->where('id_user', Auth::user()->id)->get();
+        $penyewaan = Penyewaan::with('art')->where('id_user', Auth::user()->id)->orderBy('id', 'DESC')->get();
         return view('user.pages.penyewaan', [
             'penyewaan' => $penyewaan
         ]);

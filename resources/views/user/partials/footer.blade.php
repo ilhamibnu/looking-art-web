@@ -5,7 +5,7 @@
                 <div class="w-full flex flex-wrap">
                     <div class="min-[992px]:w-[25%] px-[12px] w-full gi-footer-cat wow fadeInUp">
                         <div class="gi-footer-widget gi-footer-company flex flex-col">
-                            <img src="assets/img/logo/logo.png" class="gi-footer-logo max-w-[144px] max-[767px]:max-w-[130px]  mb-[30px]" alt="footer logo">
+                            <img src="{{ asset('user/assets/img/logo/logo.png') }}" class="gi-footer-logo max-w-[144px] max-[767px]:max-w-[130px]  mb-[30px]" alt="footer logo">
                             <p class="gi-footer-detail max-w-[400px] mb-[30px] p-[0] text-[14px] leading-[27px] font-normal text-[#777] inline-block relative max-[1199px]:text-[14px]">
                                 Grabit is the biggest market of grocery products. Get your
                                 daily needs from our store.</p>

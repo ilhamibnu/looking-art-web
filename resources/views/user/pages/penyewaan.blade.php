@@ -35,18 +35,22 @@
                                     @foreach ($penyewaan as $item )
                                     <tr class="pro-gl-content">
                                         <td class="p-[0.5rem] border-b-[1px] border-solid border-[#dee2e6]"><span class="max-[767px]:text-[14px] py-[14px] flex text-[#777] tracking-[0.02rem]">{{ $loop->iteration }}</span></td>
-                                        <td class="p-[0.5rem] border-b-[1px] border-solid border-[#dee2e6]"><img class="prod-img h-[58px] w-[58px]" src="{{ asset('user/assets/img/product-images/25_1.jpg') }}" alt="product image"></td>
+                                        <td class="p-[0.5rem] border-b-[1px] border-solid border-[#dee2e6]"><img class="prod-img h-[58px] w-[58px]" src="{{ asset('art/'.$item->art->foto) }}" alt="product image"></td>
                                         <td class="p-[0.5rem] border-b-[1px] border-solid border-[#dee2e6]"><span class="max-[767px]:text-[14px] py-[14px] flex text-[#777] tracking-[0.02rem]">{{ $item->art->name }}</span></td>
                                         <td class="p-[0.5rem] border-b-[1px] border-solid border-[#dee2e6]"><span class="max-[767px]:text-[14px] py-[14px] flex text-[#777] tracking-[0.02rem]">{{ $item->user->name }}</span></td>
                                         <td class="p-[0.5rem] border-b-[1px] border-solid border-[#dee2e6]"><span class="max-[767px]:text-[14px] py-[14px] flex text-[#777] tracking-[0.02rem]">{{ $item->status }}</span></td>
                                         <td class="p-[0.5rem] border-b-[1px] border-solid border-[#dee2e6]"><span class="max-[767px]:text-[14px] py-[14px] flex text-[#5caf90] tracking-[0.02rem]">{{ $item->keterangan }}</span></td>
                                         <td class="p-[0.5rem] border-b-[1px] border-solid border-[#dee2e6]"><span class="max-[767px]:text-[14px] py-[14px] flex text-[#777] tracking-[0.02rem]">{{ $item->tanggal }}</span></td>
                                         <td class="p-[0.5rem] border-b-[1px] border-solid border-[#dee2e6]">
-                                            <span class="tbl-btn py-[14px] flex text-[#777]">
-                                                <a class="gi-btn-1 gi-remove-wish btn mx-[3px] text-[20px] font-normal w-[30px] h-[30px] inline-flex items-center justify-center transition-all duration-[0.3s] ease-in-out py-[10px] px-[15px] text-[14px] font-medium bg-[#4b5966] text-[#fff] text-center rounded-[5px] hover:bg-[#5caf90] hover:text-[#fff]" href="javascript:void(0)" title="Remove From List">
-                                                    ×
-                                                </a>
-                                            </span>
+                                            <form action="/user/tidakjadisewa/{{ $item->id }}" method="post">
+                                                @csrf
+                                                @method('PUT')
+                                                <span class="tbl-btn py-[14px] flex text-[#777]">
+                                                    <button class="gi-btn-1 gi-remove-wish btn mx-[3px] text-[20px] font-normal w-[30px] h-[30px] inline-flex items-center justify-center transition-all duration-[0.3s] ease-in-out py-[10px] px-[15px] text-[14px] font-medium bg-[#4b5966] text-[#fff] text-center rounded-[5px] hover:bg-[#5caf90] hover:text-[#fff]" type="submit" title="Remove From List">
+                                                        ×
+                                                    </button>
+                                                </span>
+                                            </form>
                                         </td>
                                     </tr>
                                     @endforeach

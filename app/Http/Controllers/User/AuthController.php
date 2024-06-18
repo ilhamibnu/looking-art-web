@@ -46,11 +46,10 @@ class AuthController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required|unique:users',
+            'email' => 'required|unique:users,email',
             'password' => 'required',
             'repassword' => 'required|same:password', // tambahkan ini
             'no_hp' => 'required',
-            'role' => 'required'
         ], [
             'name.required' => 'Nama harus diisi',
             'email.required' => 'Email harus diisi',
@@ -58,8 +57,6 @@ class AuthController extends Controller
             'password.required' => 'Password harus diisi',
             'repassword.required' => 'Password harus diisi',
             'no_hp.required' => 'No HP harus diisi',
-            'role.required' => 'Role harus diisi'
-
         ]);
 
         $user = new User;
@@ -67,7 +64,6 @@ class AuthController extends Controller
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->no_hp = $request->no_hp;
-        $user->role = $request->role;
         $user->save();
 
         return redirect('/user/login')->with('store', 'Data berhasil ditambahkan');

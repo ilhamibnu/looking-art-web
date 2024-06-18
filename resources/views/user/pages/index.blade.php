@@ -89,10 +89,10 @@
                                                 <span class="label veg max-[991px]:hidden">
                                                     <span class="dot"></span>
                                                 </span>
-                                                <img class="main-image max-w-full transition-all duration-[0.3s] ease delay-[0s]" src="{{ asset('user/assets/img/product-images/32_1.jpg') }}" alt="Product">
-                                                <img class="hover-image absolute z-[1] top-[0] left-[0] opacity-[0] transition-all duration-[0.3s] ease delay-[0s]" src="{{ asset('user/assets/img/product-images/32_2.jpg') }}" alt="Product">
+                                                <img class="main-image max-w-full transition-all duration-[0.3s] ease delay-[0s]" width="214px" src="{{ asset('art/'.$item->foto) }}" alt="Product">
+                                                <img class="hover-image absolute z-[1] top-[0] left-[0] opacity-[0] transition-all duration-[0.3s] ease delay-[0s]" src="{{ asset('art/'.$item->foto) }}" alt="Product">
                                             </a>
-                                            <div class="gi-pro-actions transition-all duration-[0.3s] ease-in-out absolute z-[9] top-[10px] bottom-[0] right-[-10px] max-[991px]:opacity-[1] max-[991px]:right-[10px] flex flex-col items-center my-[0] mx-auto opacity-0">
+                                            {{-- <div class="gi-pro-actions transition-all duration-[0.3s] ease-in-out absolute z-[9] top-[10px] bottom-[0] right-[-10px] max-[991px]:opacity-[1] max-[991px]:right-[10px] flex flex-col items-center my-[0] mx-auto opacity-0">
                                                 <a class="gi-btn-group wishlist transition-all duration-[0.3s] ease-in-out h-[30px] w-[30px] my-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee]" title="Wishlist">
                                                     <i class="fi-rr-heart transition-all duration-[0.3s] ease-in-out text-[#777] leading-[10px]"></i>
                                                 </a>
@@ -126,11 +126,11 @@
                                                         <a href="javascript:void(0)" class="p-[3px] h-[18px] min-w-[20px] capitalize flex items-center justify-center text-[12px] leading-[24px] bg-[#f7f7f7] text-[#777] font-normal">m</a>
                                                     </li>
                                                 </ul>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                     <div class="gi-pro-content h-full p-[20px] relative z-[10] flex flex-col text-left">
-                                        <a href="shop-left-sidebar-col-3.html">
+                                        <a href="/user/detail/{{ $item->id }}">
                                             <h6 class="gi-pro-stitle mb-[10px] font-normal text-[#999] text-[13px] leading-[1.2] capitalize">
                                                 {{ $item->status }}</h6>
                                         </a>
@@ -156,7 +156,8 @@
 
 
                                         <div class="gi-pro-rat-price mt-[5px] mb-[0] flex flex-col">
-                                            <span class="gi-pro-rating mb-[10px] opacity-[0.7] relative">
+                                            {{-- // btn detail --}}
+                                            {{-- <span class="gi-pro-rating mb-[10px] opacity-[0.7] relative">
                                                 <i class="gicon gi-star fill text-[14px] text-[#f27d0c] float-left mr-[3px]"></i>
                                                 <i class="gicon gi-star fill text-[14px] text-[#f27d0c] float-left mr-[3px]"></i>
                                                 <i class="gicon gi-star fill text-[14px] text-[#f27d0c] float-left mr-[3px]"></i>
@@ -166,7 +167,7 @@
                                             <span class="gi-price">
                                                 <span class="new-price text-[#4b5966] font-bold text-[14px] mr-[7px]">$59.00</span>
                                                 <span class="old-price text-[14px] text-[#777] line-through">$87.00</span>
-                                            </span>
+                                            </span> --}}
                                         </div>
                                     </div>
                                 </div>
