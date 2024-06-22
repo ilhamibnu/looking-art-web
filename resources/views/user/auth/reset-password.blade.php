@@ -1,5 +1,5 @@
 @extends('user.layout.main')
-
+@section('title', 'Reset Password - ')
 @section('content')
 <!-- Login section -->
 <section class="gi-login py-[40px] max-[767px]:py-[30px]">

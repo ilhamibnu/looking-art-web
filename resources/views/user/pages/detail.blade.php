@@ -1,5 +1,5 @@
 @extends('user.layout.main')
-
+@section('title', 'Detail Art - '.$art->name)
 @section('content')
 <!-- Sart Single Product -->
 <section class="gi-single-product py-[40px] max-[767px]:py-[30px]">

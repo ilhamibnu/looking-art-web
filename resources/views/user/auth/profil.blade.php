@@ -1,5 +1,5 @@
 @extends('user.layout.main')
-
+@section('title', 'Profil - ')
 @section('content')
 <!-- Register section -->
 <section class="gi-register py-[40px] max-[767px]:py-[30px]">

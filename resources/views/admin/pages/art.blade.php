@@ -1,4 +1,5 @@
 @extends('admin.layout.main')
+@section('title', 'Art - ')
 @section('content')
 <div class="container-fluid">
     <div class="nk-content-inner">

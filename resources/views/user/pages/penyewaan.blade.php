@@ -1,4 +1,5 @@
 @extends('user.layout.main')
+@section('title', 'Penyewaan - ')
 @section('content')
 <!-- Wishlist section -->
 <section class="gi-faq py-[40px] max-[767px]:py-[30px] gi-wishlist">
