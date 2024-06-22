@@ -2,16 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Art;
+use App\Models\Domisili;
+use App\Models\Keahlian;
+use Illuminate\Http\Request;
 
 class ArtController extends Controller
 {
     public function index()
     {
-        $art = Art::all();
+        $domisili = Domisili::all();
+        $keahlian = Keahlian::all();
+        $art = Art::with('keahlian', 'domisili')->get();
         return view('admin.pages.art', [
-            'art' => $art
+            'art' => $art,
+            'domisili' => $domisili,
+            'keahlian' => $keahlian
         ]);
     }
 

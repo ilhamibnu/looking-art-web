@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\User;
 
 use App\Models\Art;
+use App\Models\Domisili;
+use App\Models\Keahlian;
 use App\Models\Penyewaan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -10,19 +12,51 @@ use Illuminate\Support\Facades\Auth;
 
 class LandingController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $art = Art::orderBy('id', 'DESC')->get();
+        $domisili = Domisili::all();
+        $keahlian = Keahlian::all();
+
+        $id_domisili = $request->id_domisili;
+        $id_keahlian = $request->id_keahlian;
+        $name = $request->name;
+
+        // filter
+
+        if ($id_domisili && $id_keahlian && $name) {
+            $art = Art::where('id_domisili', $id_domisili)->where('id_keahlian', $id_keahlian)->where('name', 'like', '%' . $name . '%')->orderBy('id', 'DESC')->get();
+        } elseif ($id_domisili && $id_keahlian) {
+            $art = Art::where('id_domisili', $id_domisili)->where('id_keahlian', $id_keahlian)->orderBy('id', 'DESC')->get();
+        } elseif ($id_domisili && $name) {
+            $art = Art::where('id_domisili', $id_domisili)->where('name', 'like', '%' . $name . '%')->orderBy('id', 'DESC')->get();
+        } elseif ($id_keahlian && $name) {
+            $art = Art::where('id_keahlian', $id_keahlian)->where('name', 'like', '%' . $name . '%')->orderBy('id', 'DESC')->get();
+        } elseif ($id_domisili) {
+            $art = Art::where('id_domisili', $id_domisili)->orderBy('id', 'DESC')->get();
+        } elseif ($id_keahlian) {
+            $art = Art::where('id_keahlian', $id_keahlian)->orderBy('id', 'DESC')->get();
+        } elseif ($name) {
+            $art = Art::where('name', 'like', '%' . $name . '%')->orderBy('id', 'DESC')->get();
+        } else {
+            $art = Art::orderBy('id', 'DESC')->get();
+        }
+
         return view('user.pages.index', [
-            'art' => $art
+            'art' => $art,
+            'domisili' => $domisili,
+            'keahlian' => $keahlian
         ]);
     }
 
     public function detail($id)
     {
+        $domisili = Domisili::all();
+        $keahlian = Keahlian::all();
         $art = Art::find($id);
         return view('user.pages.detail', [
-            'art' => $art
+            'art' => $art,
+            'domisili' => $domisili,
+            'keahlian' => $keahlian
         ]);
     }
 
@@ -74,9 +108,13 @@ class LandingController extends Controller
 
     public function penyewaan()
     {
+        $domisili = Domisili::all();
+        $keahlian = Keahlian::all();
         $penyewaan = Penyewaan::with('art')->where('id_user', Auth::user()->id)->orderBy('id', 'DESC')->get();
         return view('user.pages.penyewaan', [
-            'penyewaan' => $penyewaan
+            'penyewaan' => $penyewaan,
+            'domisili' => $domisili,
+            'keahlian' => $keahlian
         ]);
     }
 }

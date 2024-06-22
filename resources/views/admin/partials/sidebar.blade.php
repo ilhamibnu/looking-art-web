@@ -18,6 +18,8 @@
                     <li class="nk-menu-item"><a href="/admin/dashboard" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-cart-fill"></em></span><span class="nk-menu-text">Dashboard</span></a></li>
                     <li class="nk-menu-item"><a href="/admin/penyewaan" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span><span class="nk-menu-text">Penyewaan</span></a></li>
                     <li class="nk-menu-item"><a href="/admin/art" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-growth-fill"></em></span><span class="nk-menu-text">Art</span></a></li>
+                    <li class="nk-menu-item"><a href="/admin/domisili" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-map-pin-fill"></em></span><span class="nk-menu-text">Domilisi</span></a></li>
+                    <li class="nk-menu-item"><a href="/admin/keahlian" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-layers-fill"></em></span><span class="nk-menu-text">Keahlian</span></a></li>
                     <li class="nk-menu-item"><a href="/admin/user" class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-users-fill"></em></span><span class="nk-menu-text">User</span></a></li>
                     {{-- <li class="nk-menu-heading">
                         <h6 class="overline-title text-primary-alt">Applications</h6>

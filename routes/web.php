@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArtController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DomisiliController;
+use App\Http\Controllers\KeahlianController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PenyewaanController;
 use App\Http\Controllers\User\LandingController;
@@ -46,6 +48,18 @@ Route::group(['middleware' => ['IsAdmin']], function () {
     Route::post('/admin/art/store', [ArtController::class, 'store']);
     Route::put('/admin/art/update/{id}', [ArtController::class, 'edit']);
     Route::delete('/admin/art/delete/{id}', [ArtController::class, 'destroy']);
+
+    # Domisili
+    Route::get('/admin/domisili', [DomisiliController::class, 'index']);
+    Route::post('/admin/domisili/store', [DomisiliController::class, 'store']);
+    Route::put('/admin/domisili/update/{id}', [DomisiliController::class, 'edit']);
+    Route::delete('/admin/domisili/delete/{id}', [DomisiliController::class, 'destroy']);
+
+    # Keahlian
+    Route::get('/admin/keahlian', [KeahlianController::class, 'index']);
+    Route::post('/admin/keahlian/store', [KeahlianController::class, 'store']);
+    Route::put('/admin/keahlian/update/{id}', [KeahlianController::class, 'edit']);
+    Route::delete('/admin/keahlian/delete/{id}', [KeahlianController::class, 'destroy']);
 
     # Penyewaan
     Route::get('/admin/penyewaan', [PenyewaanController::class, 'index']);

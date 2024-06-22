@@ -41,6 +41,8 @@
                                         <th>Jenis Kelamin</th>
                                         <th>Umur</th>
                                         <th>Alamat</th>
+                                        <th>Domisili</th>
+                                        <th>Keahlian</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -64,11 +66,13 @@
 
                                         </td>
                                         <td>{{ $item->alamat }}</td>
+                                        <td>{{ $item->domisili->name }}</td>
+                                        <td>{{ $item->keahlian->name }}</td>
                                         <td>
                                             @if ($item->status == 'Tersedia')
                                             <span class="badge rounded-pill bg-primary">Tersedia</span>
                                             @else
-                                            <span class="badge rounded-pill bg-danger">Tidak Tersedia</span>    
+                                            <span class="badge rounded-pill bg-danger">Tidak Tersedia</span>
                                             @endif
                                         </td>
                                         <td>
@@ -136,6 +140,28 @@
                                                             <div class="form-control-wrap"><input type="text" name="alamat" value="{{ $item->alamat }}" class="form-control" id="phone-no"></div>
                                                         </div>
 
+                                                        <div class="form-group"><label class="form-label" for="phone-no">Domisili</label>
+                                                            <div class="form-control-wrap">
+                                                                <select name="id_domisili" id="" class="form-control">
+                                                                    <option selected value="{{ $item->domisili->id }}">{{ $item->domisili->name }}</option>
+                                                                    @foreach ($domisili as $dom )
+                                                                    <option value="{{ $dom->id }}">{{ $dom->name }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group"><label class="form-label" for="phone-no">Keahlian</label>
+                                                            <div class="form-control-wrap">
+                                                                <select name="id_keahlian" id="" class="form-control">
+                                                                    <option selected value="{{ $item->keahlian->id }}">{{ $item->keahlian->name }}</option>
+                                                                    @foreach ($keahlian as $keahlian2 )
+                                                                    <option value="{{ $keahlian2->id }}">{{ $keahlian2->name }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
                                                         <div class="form-group"><label class="form-label" for="phone-no">Status</label>
                                                             <div class="form-control-wrap">
                                                                 <select name="status" id="" class="form-control">
@@ -193,6 +219,28 @@
 
                                         <div class="form-group"><label class="form-label" for="phone-no">Alamat</label>
                                             <div class="form-control-wrap"><input type="text" name="alamat" class="form-control" id="phone-no"></div>
+                                        </div>
+
+                                        <div class="form-group"><label class="form-label" for="phone-no">Domisili</label>
+                                            <div class="form-control-wrap">
+                                                <select name="id_domisili" id="" class="form-control">
+                                                    <option selected value="">Pilih Domisili</option>
+                                                    @foreach ($domisili as $dom )
+                                                    <option value="{{ $dom->id }}">{{ $dom->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group"><label class="form-label" for="phone-no">Keahlian</label>
+                                            <div class="form-control-wrap">
+                                                <select name="id_keahlian" id="" class="form-control">
+                                                    <option selected value="">Pilih Keahlian</option>
+                                                    @foreach ($keahlian as $keahlian2 )
+                                                    <option value="{{ $keahlian2->id }}">{{ $keahlian2->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
                                         </div>
 
                                         <div class="form-group"><label class="form-label" for="phone-no">Status</label>

@@ -16,11 +16,23 @@ class Art extends Model
         'tgl_lahir',
         'alamat',
         'foto',
-        'status'
+        'status',
+        'id_domisili',
+        'id_keahlian'
     ];
 
     public function penyewaan()
     {
         return $this->hasMany(Penyewaan::class);
+    }
+
+    public function domisili()
+    {
+        return $this->belongsTo(Domisili::class, 'id_domisili');
+    }
+
+    public function keahlian()
+    {
+        return $this->belongsTo(Keahlian::class, 'id_keahlian');
     }
 }
