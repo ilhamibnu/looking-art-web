@@ -80,11 +80,17 @@ Route::post('/user/register', [UserAuthController::class, 'postRegister']);
 
 Route::get('/user/detail/{id}', [LandingController::class, 'detail']);
 
+Route::get('/user/reset-password', [UserAuthController::class, 'linkresetpassword']);
+Route::post('/user/reset-password', [UserAuthController::class, 'sendlinkresetpassword']);
+Route::get('/user/reset-password/{code}', [UserAuthController::class, 'changepassword']);
+Route::post('/user/change-password', [UserAuthController::class, 'changepasswordpost']);
+
 // group middleware
 Route::group(['middleware' => ['IsUser']], function () {
 
     Route::get('/user/logout', [UserAuthController::class, 'logout']);
     Route::get('/user/profil', [UserAuthController::class, 'indexProfil']);
+    Route::post('/user/profil', [UserAuthController::class, 'updateProfil']);
 
 
     Route::post('/user/sewa', [LandingController::class, 'sewa']);
