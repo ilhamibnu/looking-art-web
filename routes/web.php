@@ -92,7 +92,6 @@ Route::group(['middleware' => ['IsUser']], function () {
     Route::get('/user/profil', [UserAuthController::class, 'indexProfil']);
     Route::post('/user/profil', [UserAuthController::class, 'updateProfil']);
 
-
     Route::post('/user/sewa', [LandingController::class, 'sewa']);
     Route::put('/user/tidakjadisewa/{id}', [LandingController::class, 'tidakjadisewa']);
     Route::get('/user/penyewaan', [LandingController::class, 'penyewaan']);

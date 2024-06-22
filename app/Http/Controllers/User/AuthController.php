@@ -114,19 +114,17 @@ class AuthController extends Controller
                 'no_hp.required' => 'No HP harus diisi',
                 'password.required' => 'Password harus diisi',
                 'repassword.required' => 'Password harus diisi',
-
             ]);
         } else {
             $request->validate([
                 'name' => 'required',
-                'email' => 'required|email|unique:users,email,' . Auth::user()->id,
+                'email' => 'required|unique:users,email,' . Auth::user()->id,
                 'no_hp' => 'required',
             ], [
                 'name.required' => 'Nama harus diisi',
                 'email.required' => 'Email harus diisi',
                 'email.unique' => 'Email sudah terdaftar',
                 'no_hp.required' => 'No HP harus diisi',
-
             ]);
         }
 
@@ -137,6 +135,7 @@ class AuthController extends Controller
         if ($request->password) {
             $user->password = bcrypt($request->password);
         }
+        $user->save();
         return redirect('/user/profil')->with('updateprofil', 'Profil berhasil diupdate');
     }
 
