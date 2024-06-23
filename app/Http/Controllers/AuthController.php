@@ -25,7 +25,11 @@ class AuthController extends Controller
         ]);
 
         if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect('/admin/dashboard')->with('login', 'Login berhasil');
+            if (Auth::user()->role == 'admin') {
+                return redirect('/admin/dashboard');
+            }
+            Auth::logout();
+            return redirect('/admin/login')->with('error', 'Login gagal, email atau password salah');
         }
 
         return redirect('/admin/login')->with('error', 'Login gagal, email atau password salah');
