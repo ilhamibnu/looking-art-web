@@ -79,7 +79,7 @@
                                                     <h5 class="modal-title">Edit</h5><a href="#" class="close" data-bs-dismiss="modal" aria-label="Close"><em class="icon ni ni-cross"></em></a>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="/admin/domilisi/update/{{ $item->id }}" method="POST" class="form-validate is-alter">
+                                                    <form action="/admin/domisili/update/{{ $item->id }}" method="POST" class="form-validate is-alter">
                                                         @csrf
                                                         @method('PUT')
                                                         <div class="form-group"><label class="form-label" for="full-name">Full Name</label>
@@ -106,14 +106,11 @@
                                     <h5 class="modal-title">Add</h5><a href="#" class="close" data-bs-dismiss="modal" aria-label="Close"><em class="icon ni ni-cross"></em></a>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="/admin/domilisi/store" method="POST" class="form-validate is-alter">
+                                    <form action="/admin/domisili/store" method="POST" class="form-validate is-alter">
                                         @csrf
                                         <div class="form-group"><label class="form-label" for="full-name">Name</label>
                                             <div class="form-control-wrap"><input type="text" name="name" class="form-control" id="full-name" required=""></div>
                                         </div>
-
-
-
                                         <div class="form-group"><button type="submit" class="btn btn-lg btn-primary">Save</button></div>
                                     </form>
                                 </div>
