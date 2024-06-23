@@ -94,7 +94,7 @@ class AuthController extends Controller
         $user->no_hp = $request->no_hp;
         $user->save();
 
-        return redirect('/user/login')->with('store', 'Data berhasil ditambahkan');
+        return redirect('/user/login')->with('register', 'Data berhasil ditambahkan');
     }
 
     public function logout()

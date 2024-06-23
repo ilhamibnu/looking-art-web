@@ -78,6 +78,205 @@
     <!-- Main Js -->
     <script src="{{ asset('user/assets/js/main.js') }}"></script>
     <script src="{{ asset('user/assets/js/demo-3.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if(Session::get('login'))
+    <script>
+        // tidak usah tombol oke, berikan waktu 1 detik
+        Swal.fire({
+            title: 'Berhasil!'
+            , text: 'Login Berhasil'
+            , icon: 'success'
+            , timer: 1000
+            , showConfirmButton: false
+        });
+
+    </script>
+    @endif
+
+    @if(Session::get('error'))
+    <script>
+        // tidak usah tombol oke, berikan waktu 1 detik
+        Swal.fire({
+            title: 'Gagal!'
+            , text: 'Login Gagal'
+            , icon: 'error'
+            , timer: 1000
+            , showConfirmButton: false
+        });
+
+    </script>
+    @endif
+
+    @if(Session::get('register'))
+    <script>
+        // tidak usah tombol oke, berikan waktu 1 detik
+        Swal.fire({
+            title: 'Berhasil!'
+            , text: 'Register Berhasil'
+            , icon: 'success'
+            , timer: 1000
+            , showConfirmButton: false
+        });
+
+    </script>
+    @endif
+
+    @if(Session::get('logout'))
+    <script>
+        // tidak usah tombol oke, berikan waktu 1 detik
+        Swal.fire({
+            title: 'Berhasil!'
+            , text: 'Logout Berhasil'
+            , icon: 'success'
+            , timer: 1000
+            , showConfirmButton: false
+        });
+
+    </script>
+    @endif
+
+    @if(Session::get('updateprofil'))
+    <script>
+        // tidak usah tombol oke, berikan waktu 1 detik
+        Swal.fire({
+            title: 'Berhasil!'
+            , text: 'Update Profil Berhasil'
+            , icon: 'success'
+            , timer: 1000
+            , showConfirmButton: false
+        });
+
+    </script>
+    @endif
+
+    @if(Session::get('linkkadaluarsa'))
+    <script>
+        // tidak usah tombol oke, berikan waktu 1 detik
+        Swal.fire({
+            title: 'Gagal!'
+            , text: 'Link Kadaluarsa'
+            , icon: 'error'
+            , timer: 1000
+            , showConfirmButton: false
+        });
+
+    </script>
+    @endif
+
+    @if(Session::get('resetpasswordberhasil'))
+    <script>
+        // tidak usah tombol oke, berikan waktu 1 detik
+        Swal.fire({
+            title: 'Berhasil!'
+            , text: 'Reset Password Berhasil'
+            , icon: 'success'
+            , timer: 1000
+            , showConfirmButton: false
+        });
+
+    </script>
+    @endif
+
+
+    @if(Session::get('linkresetpassword'))
+    <script>
+        // tidak usah tombol oke, berikan waktu 1 detik
+        Swal.fire({
+            title: 'Berhasil!'
+            , text: 'Link Reset Password Berhasil Dikirim'
+            , icon: 'success'
+            , timer: 1000
+            , showConfirmButton: false
+        });
+
+    </script>
+    @endif
+
+    @if(Session::get('emailtidakditemukan'))
+    <script>
+        // tidak usah tombol oke, berikan waktu 1 detik
+        Swal.fire({
+            title: 'Gagal!'
+            , text: 'Email Tidak Ditemukan'
+            , icon: 'error'
+            , timer: 1000
+            , showConfirmButton: false
+        });
+
+    </script>
+    @endif
+
+    @if(Session::get('sewa-proses'))
+    <script>
+        // tidak usah tombol oke, berikan waktu 1 detik
+        Swal.fire({
+            title: 'Gagal!'
+            , text: 'Penyewaan sedang diproses, silahkan tunggu konfirmasi dari admin'
+            , icon: 'success'
+            , timer: 1000
+            , showConfirmButton: false
+        });
+
+    </script>
+    @endif
+
+    @if(Session::get('sewa-berhasil'))
+    <script>
+        // tidak usah tombol oke, berikan waktu 1 detik
+        Swal.fire({
+            title: 'Gagal!'
+            , text: 'Anda sedang menyewa art ini'
+            , icon: 'success'
+            , timer: 1000
+            , showConfirmButton: false
+        });
+
+    </script>
+    @endif
+
+    @if(Session::get('status-art'))
+    <script>
+        // tidak usah tombol oke, berikan waktu 1 detik
+        Swal.fire({
+            title: 'Gagal!'
+            , text: 'Art tidak tersedia'
+            , icon: 'success'
+            , timer: 1000
+            , showConfirmButton: false
+        });
+
+    </script>
+    @endif
+
+    @if(Session::get('sewa'))
+    <script>
+        // tidak usah tombol oke, berikan waktu 1 detik
+        Swal.fire({
+            title: 'Berhasil!'
+            , text: 'Sewa berhasil, silahkan tunggu konfirmasi dari admin'
+            , icon: 'success'
+            , timer: 1000
+            , showConfirmButton: false
+        });
+
+    </script>
+    @endif
+
+    @if(Session::get('tidak-jadi-sewa'))
+    <script>
+        // tidak usah tombol oke, berikan waktu 1 detik
+        Swal.fire({
+            title: 'Berhasil!'
+            , text: 'Sewa dibatalkan'
+            , icon: 'success'
+            , timer: 1000
+            , showConfirmButton: false
+        });
+
+    </script>
+    @endif
 </body>
 
 
