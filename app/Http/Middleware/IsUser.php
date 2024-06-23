@@ -18,6 +18,8 @@ class IsUser
     {
         if (Auth::check() && Auth::user()->role == 'user') {
             return $next($request);
+        } else {
+            Auth::logout();
         }
 
         return redirect('/user/login')->with('error', 'Anda harus login terlebih dahulu');
