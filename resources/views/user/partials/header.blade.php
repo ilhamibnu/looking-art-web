@@ -78,7 +78,7 @@
                         <div class="gi-header-action self-center max-[991px]:hidden">
                             <div class="gi-header-bottons flex justify-end">
                                 <!-- Header User Start -->
-                                @if(Auth::check())
+                                @if(Auth::check() && Auth::user()->role == 'user')
                                 <div class="gi-acc-drop relative">
                                     <a href="javascript:void(0)" class="gi-header-btn gi-header-user dropdown-toggle gi-user-toggle mr-[30px] transition-all duration-[0.3s] ease-in-out relative flex text-[#4b5966] w-[auto] items-center whitespace-nowrap" title="Account">
                                         <div class="header-icon relative flex">
@@ -406,7 +406,7 @@
             <div class="gi-menu-inner">
                 <div class="gi-menu-content">
                     <ul>
-                        @if (Auth::check())
+                        @if (Auth::check() && Auth::user()->role == 'user')
                         <li class="dropdown relative drop-list">
                             <a href="javascript:void(0)" class="dropdown-arrow mb-[12px] p-[12px] block capitalize text-[#777] border-[1px] border-solid border-[#eee] rounded-[5px] text-[15px] font-medium">{{ Auth::user()->name }}</a>
                             <ul class="sub-menu w-full min-w-[auto] p-0 mb-[10px] static hidden visible transition-none opacity-[1]">

@@ -14,10 +14,6 @@ class LandingController extends Controller
 {
     public function index(Request $request)
     {
-        if (Auth::check() && Auth::user()->role == 'admin') {
-            return redirect('/admin/dashboard');
-        }
-
         $domisili = Domisili::all();
         $keahlian = Keahlian::all();
 
