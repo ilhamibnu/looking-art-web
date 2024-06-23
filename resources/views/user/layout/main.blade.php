@@ -214,7 +214,7 @@
         Swal.fire({
             title: 'Gagal!'
             , text: 'Penyewaan sedang diproses, silahkan tunggu konfirmasi dari admin'
-            , icon: 'success'
+            , icon: 'error'
             , timer: 1000
             , showConfirmButton: false
         });
@@ -228,7 +228,7 @@
         Swal.fire({
             title: 'Gagal!'
             , text: 'Anda sedang menyewa art ini'
-            , icon: 'success'
+            , icon: 'error'
             , timer: 1000
             , showConfirmButton: false
         });
@@ -242,7 +242,7 @@
         Swal.fire({
             title: 'Gagal!'
             , text: 'Art tidak tersedia'
-            , icon: 'success'
+            , icon: 'error'
             , timer: 1000
             , showConfirmButton: false
         });
